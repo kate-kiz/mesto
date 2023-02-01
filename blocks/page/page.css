@@ -1,0 +1,8 @@
+.page {
+    background-color: black;
+    margin: 0 auto;
+    color: #fff;
+    font-family: 'Inter', 'Arial', sans-serif;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+}

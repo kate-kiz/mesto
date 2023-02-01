@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto</title>
+</head>
+
+<body>
+  <div class="page">  
+    <header class="header">
+      <img src="./images/logo.svg" class="header__logo" alt="Логотип Mesto Russia">
+    </header>
+
+    <section class="profile">
+      <img src="./images/image.jpg" class="profile__avatar" alt="Жак-Ив Кусто">
+      <div class="profile__info">
+        <div class="profile__container">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <buttton type="button" class="profile__edit-button"></buttton>
+        </div>  
+          <p class="profile__text">Исследователь океана</p>
+      </div>
+      <button type="button" class="profile__add-button">
+        <img src="./images/add_button.svg" class="profile__add-logo" alt="Плюс">
+      </button>
+    </section>
+  
+    <section class="elements">
+      <article class="element">
+        <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Фотография храма в горах" class="element__picture">
+        <h2 class="element__text">Карачаевск</h2>
+        <button type="button" class="element__button-like"></button>
+      </article>
+      <article class="element">
+        <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Фотография горы Эльбрус" class="element__picture">
+        <h2 class="element__text">Гора Эльбрус</h2>
+        <button type="button" class="element__button-like"></button>
+      </article>
+      <article class="element">
+        <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фотография горного хребта Домбай" class="element__picture">
+        <h2 class="element__text">Домбай</h2>
+        <button type="button" class="element__button-like"></button>
+        </article>
+      <article class="element">
+        <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Фотография горы Эльбрус" class="element__picture">
+        <h2 class="element__text">Гора Эльбрус</h2>
+        <button type="button" class="element__button-like"></button>
+      </article>
+      <article class="element">
+        <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фотография горного хребта Домбай" class="element__picture">
+        <h2 class="element__text">Домбай</h2>
+        <button type="button" class="element__button-like"></button>
+      </article>
+      <article class="element">
+        <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Фотография храма в горах" class="element__picture">
+        <h2 class="element__text">Карачаево-Черкессия</h2>
+        <button type="button" class="element__button-like"></button>
+      </article>
+      </section>
+
+      <footer class="footer">
+        <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
+      </footer> 
+  </div>
+  <section class="popup">
+    <div class="popup__container">
+      <button class="popup__button-close" type="button"></button>
+      <h2 class="popup__header">Редактировать профиль</h2>
+      <p class="popup__text">Жак-Ив Кусто</p>
+      <div class="popup__line"></div>
+      <p class="popup__text">Исследователь океана</p>
+      <div class="popup__line"></div>
+      <button class="popup__button-submit">Сохранить</button>
+    </div>
+  </section>
+
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>
