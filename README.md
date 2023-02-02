@@ -21,3 +21,5 @@
 - Работа с DOM;
 
 **Ссылка на GitHub Pages**
+
+https://kate-kiz.github.io/mesto/index.html
