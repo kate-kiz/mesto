@@ -1,0 +1,5 @@
+.element__button-like_type_active {
+    background-image: url(../../../../images/black_heart.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
