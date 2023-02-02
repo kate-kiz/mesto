@@ -1,6 +1,6 @@
 .popup__button-submit {
     max-width: 358px;
-    height: 50px;
+    min-height: 50px;
     background-color: black;
     color: white;
     font-family: 'Inter', 'Arial', sans-serif;
