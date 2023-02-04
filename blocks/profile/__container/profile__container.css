@@ -8,6 +8,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 670px) {
     .profile__container {
-        column-gap: 15px;
+        column-gap: 10px;
+        transform: translateX(15px) translateY(4px);
     }
 }

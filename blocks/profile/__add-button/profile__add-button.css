@@ -4,6 +4,7 @@
     align-self: center;
     margin-left: auto;
     border: solid 2px white;
+    border-radius: 2px;
     background-color: transparent;
     cursor: pointer;
 }
