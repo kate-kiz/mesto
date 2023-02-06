@@ -1,4 +1,5 @@
 .profile__text {
+    max-width: 500px;
     margin: 0;
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
@@ -7,7 +8,9 @@
     line-height: 1;
     text-align: left;
     text-overflow: ellipsis;
+    /* Текст обрезается и к конце строки добавляется многоточие */
     white-space: nowrap;
+    /* Запретила перенос текста */
     overflow: hidden;
 }
 
