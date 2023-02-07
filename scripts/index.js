@@ -10,33 +10,48 @@ const profileNamePlaceholder = document.querySelector('.profile__name');
 const jobNamePlaceholder = document.querySelector('.profile__text');
 
 
-function toggleOpenPopup() {
-    if (popup.classList.toggle("popup_opened")) {
-        popupFormJobInput.value = jobNamePlaceholder.textContent;
-        popupFormNameInput.value = profileNamePlaceholder.textContent;
-    }
+// function toggleOpenPopup() {
+//     if (popup.classList.toggle("popup_opened")) {
+//         popupFormJobInput.value = jobNamePlaceholder.textContent;
+//         popupFormNameInput.value = profileNamePlaceholder.textContent;
+//     }
 
-    // popupFormJobInput.value = jobNamePlaceholder.textContent
-    // popupFormNameInput.value = profileNamePlaceholder.textContent
+// popupFormJobInput.value = jobNamePlaceholder.textContent
+// popupFormNameInput.value = profileNamePlaceholder.textContent
 
-    // popup.classList.toggle("popup_opened");
-}
+// popup.classList.toggle("popup_opened");
+// }
+
+// function handleEditButtonClick() {
+//     toggleOpenPopup();
+// }
+
+// function handleCloseButtonClick() {
+//     toggleOpenPopup();
+// }
 
 function handleEditButtonClick() {
-    toggleOpenPopup();
+    popupFormJobInput.value = jobNamePlaceholder.textContent;
+    popupFormNameInput.value = profileNamePlaceholder.textContent;
+
+    popup.classList.add("popup_opened");
+}
+
+function closePopup() {
+    popup.classList.remove('popup_opened');
 }
 
 function handleCloseButtonClick() {
-    toggleOpenPopup();
+    closePopup();
 }
 
 function handleOverlayClick(event) {
     if (event.target === event.currentTarget) {
-        toggleOpenPopup();
+        closePopup();
     }
 }
 
-function isProfileInfoValid (jobName, profileName) {
+function isProfileInfoValid(jobName, profileName) {
     // if (jobName === "") return false;
     // if (profileName === "") return false;
     if (jobName.trim() === "") return false;
@@ -45,7 +60,7 @@ function isProfileInfoValid (jobName, profileName) {
     return true;
 }
 
-function handleFormSubmit (evt) {
+function handleFormSubmit(evt) {
     evt.preventDefault();
 
     const jobName = popupFormJobInput.value;
@@ -56,7 +71,7 @@ function handleFormSubmit (evt) {
     profileNamePlaceholder.textContent = profileName;
     jobNamePlaceholder.textContent = jobName;
 
-    toggleOpenPopup();
+    closePopup();
 }
 
 // Прикрепляем обработчик к форме:
