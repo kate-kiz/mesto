@@ -1,5 +1,5 @@
 .profile__name {
-    max-width: 500px;
+    max-width: 450px;
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-size: 42px;
@@ -12,6 +12,12 @@
     white-space: nowrap;
     /* Запретила перенос текста */
     overflow: hidden;
+}
+
+@media screen and (min-width: 670px) and (max-width: 840px) {
+    .profile__name {
+        max-width: 300px;
+    }
 }
 
 @media screen and (min-width: 320px) and (max-width: 670px) {
