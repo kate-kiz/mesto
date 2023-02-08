@@ -9,11 +9,18 @@ const popupFormJobInput = document.querySelector('.popup__input_type_profession'
 const profileNameElement = document.querySelector('.profile__name');
 const jobNameElement = document.querySelector('.profile__text');
 
-function handleEditButtonClick() {
+function openPopup() {
+    popup.classList.add("popup_opened");
+}
+
+function editProfile() {
     popupFormJobInput.value = jobNameElement.textContent;
     popupFormNameInput.value = profileNameElement.textContent;
+}
 
-    popup.classList.add("popup_opened");
+function handleEditButtonClick() {
+    editProfile();
+    openPopup();
 }
 
 function closePopup() {
