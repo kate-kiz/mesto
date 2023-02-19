@@ -8,7 +8,7 @@
   <title>Mesto</title>
 </head>
 
-<body>
+<body class="body">
   <div class="page">
     <header class="header">
       <img src="./images/logo.svg" class="header__logo" alt="Логотип Mesto Russia">
@@ -39,7 +39,7 @@
     </footer>
   </div>
 
-  <section class="popup">
+  <div class="popup popup_edit-profile">
     <div class="popup__container">
       <button class="popup__button-close" type="button"></button>
       <h2 class="popup__header">Редактировать профиль</h2>
@@ -51,9 +51,9 @@
       </form>
       <button class="popup__button-submit" type="submit" form="popup__form">Сохранить</button>
     </div>
-  </section>
+  </div>
 
-  <section class="popup popup_new-place">
+  <div class="popup popup_new-place">
     <div class="popup__place-container">
       <button class="popup__button-close" type="button"></button>
       <h2 class="popup__header">Новое место</h2>
@@ -65,15 +65,15 @@
       </form>
       <button class="popup__button-save" type="submit" form="popup__form_places">Создать</button>
     </div>
-  </section>
+  </div>
 
-  <section class="popup popup_places">
+  <div class="popup popup_places">
     <div class="popup__image-container">
       <button class="popup__button-close" type="button"></button>
       <img src="./images/shtabnykh_photo-RfzgBkOsmWQ-unsplash.jpg" alt="Фотография " class="popup__picture">
       <h3 class="popup__image-caption">Катунь</h3>
     </div>
-  </section>
+  </div>
 
   <template id="element-template">
     <article class="element">
@@ -86,6 +86,7 @@
     </article>
   </template>
 
+  <script src="./scripts/cards.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 
