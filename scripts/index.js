@@ -1,28 +1,28 @@
 
 const initialCards = [
     {
-        name: 'Карачаевск',
-        link: './images/kirill-pershin-1088404-unsplash.jpg'
+        name: 'Гейзерное озеро',
+        link: './images/nick-night-p9O_YJIZC7g-unsplash.jpg'
     },
     {
-        name: 'Гора Эльбрус',
-        link: './images/kirill-pershin-1404681-unsplash.jpg'
+        name: 'Акташ',
+        link: './images/shtabnykh_photo-5Ilhgwb5kHE-unsplash.jpg'
     },
     {
-        name: 'Домбай',
-        link: './images/kirill-pershin-1556355-unsplash.jpg'
+        name: 'Актуру',
+        link: './images/shtabnykh_photo-p_K4bhYcHvs-unsplash.jpg'
     },
     {
-        name: 'Гора Эльбрус',
-        link: './images/kirill-pershin-1404681-unsplash.jpg'
+        name: 'Каракольские озера',
+        link: './images/nick-night-aADqJK3x8qE-unsplash.jpg'
     },
     {
-        name: 'Домбай',
-        link: './images/kirill-pershin-1556355-unsplash.jpg'
+        name: 'Катунь',
+        link: './images/shtabnykh_photo-RfzgBkOsmWQ-unsplash.jpg'
     },
     {
-        name: 'Карачаево-Черкессия',
-        link: './images/kirill-pershin-1088404-unsplash.jpg'
+        name: 'Чике-Таман',
+        link: './images/alexander-dobry-0rKI8jvuJm0-unsplash.jpg'
     },
 ];
 
@@ -48,7 +48,7 @@ const closeAddPlaceButton = addPlacePopup.querySelector(".popup__button-close");
 const elements = document.querySelector(".elements");
 const elementTemplate = document.querySelector("#element-template").content;
 
-const imagePopupTemplate = document.querySelector("#image-popup").content;
+const fullImagePopup = document.querySelector(".popup_places");
 
 function openPopup() {
     popup.classList.add("popup_opened");
@@ -76,6 +76,7 @@ function handleOverlayClick(event) {
     if (event.target === event.currentTarget) {
         closePopup();
         closeAddPlacePopup();
+        closeImagePopup();
     }
 }
 
@@ -119,7 +120,6 @@ const deleteCard = (cardElement) => {
 
 const handleDeleteCardButtonClick = (evt) => {
     const cardElement = evt.target.closest(".element");
-
     deleteCard(cardElement);
 };
 
@@ -130,47 +130,40 @@ const likeCard = (cardElement) => {
 
 const handleLikeCardButtonClick = (evt) => {
     const cardElement = evt.target.closest(".element");
-
     likeCard(cardElement);
 };
 
-const openImagePopup = (popupElement) => {
-    console.log(popupElement);
-    popupElement.classList.add("popup_opened");
+const openImagePopup = () => {
+    fullImagePopup.classList.add("popup_opened");
 };
 
-const closeImagePopup = (popupElement) => {
-    popupElement.remove();
+const closeImagePopup = () => {
+    fullImagePopup.classList.remove("popup_opened");
 };
 
-const handleCloseImagePopupButtonClick = (evt) => {
-    const popupElement = evt.target.closest(".popup_places");
-
-    closeImagePopup(popupElement);
+const handleCloseImagePopupButtonClick = () => {
+    closeImagePopup();
 };
 
 function handleImagePopupOverlayClick(event) {
     if (event.target === event.currentTarget) {
-        const popupElement = event.target.closest(".popup_places");
-        closeImagePopup(popupElement);
+        closeImagePopup();
     }
 };
 
 const getNewImagePopup = (name, link) => {
-    const popupElement = imagePopupTemplate.querySelector(".popup_places").cloneNode(true);
+    const popupImage = document.querySelector(".popup__picture");
+    const popupName = document.querySelector(".popup__image-caption");
 
-    const popupImage = popupElement.querySelector(".popup__picture");
-    const popupName = popupElement.querySelector(".popup__image-caption");
+    popupImage.src = `${link}`;
+    popupName.textContent = `${name}`;
 
-    popupImage.src = link;
-    popupName.textContent = name;
-
-    const popupCloseButton = popupElement.querySelector(".popup__button-close");
+    const popupCloseButton = fullImagePopup.querySelector(".popup__button-close");
     popupCloseButton.addEventListener("click", handleCloseImagePopupButtonClick);
 
-    popupElement.addEventListener("click", handleImagePopupOverlayClick);
+    fullImagePopup.addEventListener("click", handleImagePopupOverlayClick);
 
-    return popupElement;
+    return fullImagePopup;
 };
 
 const handleCardImageClick = (evt) => {
@@ -179,7 +172,6 @@ const handleCardImageClick = (evt) => {
     const cardImageLink = cardElement.querySelector(".element__picture").src;
 
     const imagePopup = getNewImagePopup(cardName, cardImageLink);
-    document.body.append(imagePopup);
     openImagePopup(imagePopup);
 };
 
