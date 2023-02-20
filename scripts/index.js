@@ -156,7 +156,7 @@ const handleAddPlaceFormSubmit = (evt) => {
     }
 
     closePopup(popupAddCard);
-    document.getElementById('popup__form_places').reset();
+    formAddCard.reset();
 };
 
 createCards(initialCards.reverse());
