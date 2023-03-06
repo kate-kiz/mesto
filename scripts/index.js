@@ -54,17 +54,15 @@ function handleOverlayClick(event) {
     }
 }
 
-function isProfileInfoValid(jobName, profileName) {
-    return jobName.trim() !== "" && profileName.trim() !== "";
-}
+// function isProfileInfoValid(jobName, profileName) {
+//     return jobName.trim() !== "" && profileName.trim() !== "";
+// }
 
 function handleFormSubmit(evt) {
     evt.preventDefault();
 
     const jobName = popupFormJobInput.value;
     const profileName = popupFormNameInput.value;
-
-    if (!isProfileInfoValid(jobName, profileName)) return;
 
     profileNameElement.textContent = profileName;
     jobNameElement.textContent = jobName;
@@ -141,9 +139,9 @@ const createCards = (cards) => {
     });
 };
 
-const isCardInfoValid = (name, link) => {
-    return name.trim() !== "" && link.trim() !== "";
-};
+// const isCardInfoValid = (name, link) => {
+//     return name.trim() !== "" && link.trim() !== "";
+// };
 
 const handleAddPlaceFormSubmit = (evt) => {
     evt.preventDefault();
@@ -151,9 +149,7 @@ const handleAddPlaceFormSubmit = (evt) => {
     const cardName = nameInputAddCard.value;
     const cardLink = linkInputAddCard.value;
 
-    if (isCardInfoValid(cardName, cardLink)) {
-        createCard(cardName, cardLink);
-    }
+    createCard(cardName, cardLink);
 
     closePopup(popupAddCard);
     formAddCard.reset();
@@ -173,3 +169,23 @@ formAddCard.addEventListener("submit", handleAddPlaceFormSubmit);
 
 popupCloseButton.addEventListener("click", handleCloseImagePopupButtonClick);
 fullImagePopup.addEventListener("click", handleOverlayClick);
+
+document.addEventListener('keydown', function (evt) {
+    const activePopup = document.querySelector(".popup_opened");
+    if (evt.key === 'Escape') {
+        closePopup(activePopup);
+    }
+});
+
+const validationOptions = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inputSectionSelector: '.popup__section',
+    inputErrorSelector: '.popup__error',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__error_visible',
+};
+
+enableValidation(validationOptions);
