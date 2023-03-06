@@ -25,8 +25,16 @@ const popupCloseButton = fullImagePopup.querySelector(".popup__button-close");
 const elements = document.querySelector(".elements");
 const elementTemplate = document.querySelector("#element-template").content;
 
+function handleEscape(evt) {
+    const activePopup = document.querySelector(".popup_opened");
+    if (evt.key === 'Escape') {
+        closePopup(activePopup);
+    }
+}
+
 function openPopup(popupElement) {
     popupElement.classList.add("popup_opened");
+    document.addEventListener('keydown', handleEscape);
 }
 
 function editProfile() {
@@ -41,6 +49,7 @@ function handleEditButtonClick() {
 
 function closePopup(popupElement) {
     popupElement.classList.remove('popup_opened');
+    document.removeEventListener('keydown', handleEscape);
 }
 
 function handleCloseButtonClick() {
@@ -170,12 +179,7 @@ formAddCard.addEventListener("submit", handleAddPlaceFormSubmit);
 popupCloseButton.addEventListener("click", handleCloseImagePopupButtonClick);
 fullImagePopup.addEventListener("click", handleOverlayClick);
 
-document.addEventListener('keydown', function (evt) {
-    const activePopup = document.querySelector(".popup_opened");
-    if (evt.key === 'Escape') {
-        closePopup(activePopup);
-    }
-});
+
 
 const validationOptions = {
     formSelector: '.popup__form',
@@ -189,3 +193,4 @@ const validationOptions = {
 };
 
 enableValidation(validationOptions);
+

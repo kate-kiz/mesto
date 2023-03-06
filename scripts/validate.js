@@ -1,3 +1,4 @@
+
 const hiddenError = (inputElement, errorElement, validationOptions) => {
     errorElement.textContent = '';
     errorElement.classList.remove(validationOptions.errorClass);
@@ -46,10 +47,8 @@ const toggleButtonState = (inputs, submitButton, inactiveButtonClass) => {
 };
 
 const setEventListeners = (form, validationOptions) => {
-    const formContainer = form.closest("div");
-    const submitButton = formContainer.querySelector(validationOptions.submitButtonSelector);
-    const inputs = Array.from(formContainer.querySelectorAll(validationOptions.inputSelector));
-    // в двух верхних константах нужно было искать из формы а не из всего документа. но когда я искала из формы была ошибка которую я тебе скидывала
+    const submitButton = form.parentNode.querySelector(validationOptions.submitButtonSelector);
+    const inputs = Array.from(form.querySelectorAll(validationOptions.inputSelector));
 
     inputs.forEach(inputElement => {
         inputElement.addEventListener('input', () => {
@@ -57,8 +56,6 @@ const setEventListeners = (form, validationOptions) => {
             toggleButtonState(inputs, submitButton, validationOptions.inactiveButtonClass);
         });
     });
-
-    toggleButtonState(inputs, submitButton, validationOptions.inactiveButtonClass);
 };
 
 const enableValidation = (validationOptions) => {
