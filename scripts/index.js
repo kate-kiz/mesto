@@ -1,4 +1,3 @@
-
 const popup = document.querySelector('.popup_edit-profile');
 const popupFormElement = popup.querySelector('.popup__form');
 const popupFormNameInput = popup.querySelector('.popup__input_type_name');
@@ -6,6 +5,7 @@ const popupFormJobInput = popup.querySelector('.popup__input_type_profession');
 
 const editButton = document.querySelector('.profile__edit-button');
 const closeButton = popup.querySelector('.popup__button-close');
+const addButton = document.querySelector('.profile__add-button');
 
 const profileNameElement = document.querySelector('.profile__name');
 const jobNameElement = document.querySelector('.profile__text');
@@ -24,6 +24,17 @@ const popupCloseButton = fullImagePopup.querySelector(".popup__button-close");
 
 const elements = document.querySelector(".elements");
 const elementTemplate = document.querySelector("#element-template").content;
+
+const validationOptions = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inputSectionSelector: '.popup__section',
+    inputErrorSelector: '.popup__error',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__error_visible',
+};
 
 function handleEscape(evt) {
     const activePopup = document.querySelector(".popup_opened");
@@ -44,6 +55,7 @@ function editProfile() {
 
 function handleEditButtonClick() {
     editProfile();
+    resetErrors(popupFormElement, validationOptions);
     openPopup(popup);
 }
 
@@ -67,7 +79,7 @@ function handleOverlayClick(event) {
 //     return jobName.trim() !== "" && profileName.trim() !== "";
 // }
 
-function handleFormSubmit(evt) {
+function submitEditProfileForm(evt) {
     evt.preventDefault();
 
     const jobName = popupFormJobInput.value;
@@ -80,6 +92,8 @@ function handleFormSubmit(evt) {
 }
 
 const handleAddPlaceButtonClick = () => {
+    formAddCard.reset();
+    resetErrors(formAddCard, validationOptions);
     openPopup(popupAddCard);
 };
 
@@ -161,7 +175,6 @@ const handleAddPlaceFormSubmit = (evt) => {
     createCard(cardName, cardLink);
 
     closePopup(popupAddCard);
-    formAddCard.reset();
 };
 
 createCards(initialCards.reverse());
@@ -169,7 +182,7 @@ createCards(initialCards.reverse());
 editButton.addEventListener("click", handleEditButtonClick);
 closeButton.addEventListener("click", handleCloseButtonClick);
 popup.addEventListener("click", handleOverlayClick);
-popupFormElement.addEventListener('submit', handleFormSubmit);
+popupFormElement.addEventListener('submit', submitEditProfileForm);
 
 buttonAddCard.addEventListener("click", handleAddPlaceButtonClick);
 closeButtonAddCard.addEventListener("click", handleCloseAddPlaceButtonClick);
@@ -179,18 +192,4 @@ formAddCard.addEventListener("submit", handleAddPlaceFormSubmit);
 popupCloseButton.addEventListener("click", handleCloseImagePopupButtonClick);
 fullImagePopup.addEventListener("click", handleOverlayClick);
 
-
-
-const validationOptions = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inputSectionSelector: '.popup__section',
-    inputErrorSelector: '.popup__error',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible',
-};
-
 enableValidation(validationOptions);
-
