@@ -11,23 +11,23 @@
 <body class="body">
   <div class="page">
     <header class="header">
-      <img src="./images/logo.svg" class="header__logo" alt="Логотип Mesto Russia">
+      <img src="<%=require('./images/logo.svg')%>" class="header__logo" alt="Логотип Mesto Russia">
     </header>
 
     <main>
       <section class="profile">
-        <img src="./images/image.jpg" class="profile__avatar" alt="Жак-Ив Кусто">
+        <img src="<%=require('./images/image.jpg')%>" class="profile__avatar" alt="Жак-Ив Кусто">
         <div class="profile__info">
           <div class="profile__container">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <button type="button" class="profile__edit-button">
-              <img src="./images/edit_button.svg" class="profile__edit-logo" alt="Плюс">
+              <img src="<%=require('./images/edit_button.svg')%>" class="profile__edit-logo" alt="Плюс">
             </button>
           </div>
           <p class="profile__text">Исследователь океана</p>
         </div>
         <button type="button" class="profile__add-button">
-          <img src="./images/add_button.svg" class="profile__add-logo" alt="Плюс">
+          <img src="<%=require('./images/add_button.svg')%>" class="profile__add-logo" alt="Плюс">
         </button>
       </section>
 
@@ -82,14 +82,16 @@
   <div class="popup popup_places">
     <div class="popup__image-container">
       <button class="popup__button-close" type="button"></button>
-      <img src="./images/shtabnykh_photo-RfzgBkOsmWQ-unsplash.jpg" alt="Фотография " class="popup__picture">
+      <img src="<%=require('./images/shtabnykh_photo-RfzgBkOsmWQ-unsplash.jpg')%>" alt="Фотография "
+        class="popup__picture">
       <h3 class="popup__image-caption">Катунь</h3>
     </div>
   </div>
 
   <template id="element-template">
     <article class="element">
-      <img src="./images/nick-night-p9O_YJIZC7g-unsplash.jpg" alt="Гейзерное озеро" class="element__picture">
+      <img src="<%=require('./images/nick-night-p9O_YJIZC7g-unsplash.jpg')%>" alt="Гейзерное озеро"
+        class="element__picture">
       <div class="element__container">
         <h2 class="element__text">Гейзерное озеро</h2>
         <button type="button" class="element__button-like"></button>
@@ -98,7 +100,6 @@
     </article>
   </template>
 
-  <script src="./pages/index.js" type="module"></script>
 </body>
 
 </html>

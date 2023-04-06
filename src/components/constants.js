@@ -2,27 +2,27 @@
 export const initialCards = [
     {
         name: 'Гейзерное озеро',
-        link: './images/nick-night-p9O_YJIZC7g-unsplash.jpg'
+        link: 'https://images.unsplash.com/photo-1635445922254-afe76e74b29f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80'
     },
     {
         name: 'Акташ',
-        link: './images/shtabnykh_photo-5Ilhgwb5kHE-unsplash.jpg'
+        link: 'https://images.unsplash.com/photo-1634876371441-826b86b49f74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
     },
     {
         name: 'Актуру',
-        link: './images/shtabnykh_photo-p_K4bhYcHvs-unsplash.jpg'
+        link: 'https://images.unsplash.com/photo-1634876371520-1b46ff7def12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80'
     },
     {
         name: 'Каракольские озера',
-        link: './images/nick-night-aADqJK3x8qE-unsplash.jpg'
+        link: 'https://images.unsplash.com/photo-1635538366941-9b2798c92712?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80'
     },
     {
         name: 'Катунь',
-        link: './images/shtabnykh_photo-RfzgBkOsmWQ-unsplash.jpg'
+        link: 'https://images.unsplash.com/photo-1634876371547-efe7a8dba7b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
     },
     {
         name: 'Чике-Таман',
-        link: './images/alexander-dobry-0rKI8jvuJm0-unsplash.jpg'
+        link: 'https://images.unsplash.com/photo-1632336544277-33520e446986?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=385&q=80'
     },
 ];
 
