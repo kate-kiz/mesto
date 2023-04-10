@@ -1,16 +1,17 @@
 
 class Card {
-    static _template = document.querySelector("#element-template").content;
+    // static _template = document.querySelector("#element-template").content;
 
-    constructor(items, handleCardClick) {
+    constructor({ items, handleCardClick }, templateSelector) {
         this._name = items.name;
         this._link = items.link;
-        this._view = Card._template.cloneNode(true).children[0];
+        this._templateSelector = templateSelector;
+        this._view = this._templateSelector.content.cloneNode(true).children[0];
         this._cardImage = this._view.querySelector(".element__picture");
         this._cardName = this._view.querySelector(".element__text");
         this._buttonLikeCard = this._view.querySelector(".element__button-like");
         this._cardDeleteButton = this._view.querySelector(".element__button-delete");
-        this._fullImagePopup = document.querySelector(".popup_places");
+        // this._fullImagePopup = document.querySelector(".popup_places");
         this._handleCardClick = handleCardClick;
     };
 
@@ -24,7 +25,7 @@ class Card {
 
     _setEventListeners() {
         this._cardImage.addEventListener('click', () => {
-            this._handleCardClick(this._name, this._link);
+            this._handleCardClick({ name: this._name, link: this._link });
         });
 
         this._cardDeleteButton.addEventListener("click", this._deleteCard.bind(this));

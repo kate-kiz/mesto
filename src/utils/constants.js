@@ -26,6 +26,8 @@ export const initialCards = [
     },
 ];
 
+export const templateSelector = document.querySelector("#element-template");
+
 export const containerSelector = ".elements";
 export const popupSelector = ".popup";
 export const profilePopupSelector = '.popup_edit-profile';

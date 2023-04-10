@@ -6,13 +6,14 @@ class Section {
     };
 
     addItem(item) {
-        this._items.unshift(item);
+        this._container.prepend(item);
+        // console.log(item);
     };
 
     render() {
-        this._container.innerHTML = '';
+        // this._container.innerHTML = '';
         this._items.forEach(item => {
-            this._container.appendChild(this._renderer(item));
+            this._container.append(this._renderer(item));
         });
     }
 }
