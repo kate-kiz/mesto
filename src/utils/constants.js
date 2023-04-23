@@ -54,12 +54,12 @@ export const fullImagePopup = document.querySelector(fullImagePopupSelector);
 export const popupImage = document.querySelector(".popup__picture");
 export const popupName = document.querySelector(".popup__image-caption");
 
-export const popupUpdateAvatarSelector = ".popup__update-avatar";
+export const popupUpdateAvatarSelector = ".popup_update-avatar";
 export const popupUpdateAvatar = document.querySelector(popupUpdateAvatarSelector);
 export const formUpdateAvatar = popupUpdateAvatar.querySelector(".popup__form");
 export const buttonUpdateAvatar = document.querySelector(".profile__edit-avatar");
 
-export const popupConfirmSelector = ".popup__confirm";
+export const popupConfirmSelector = ".popup_confirm";
 export const popupConfirm = document.querySelector(popupConfirmSelector);
 export const buttonConfirmDelete = document.querySelector(".popup__button_confirm");
 
