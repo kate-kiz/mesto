@@ -54,7 +54,24 @@ export const fullImagePopup = document.querySelector(fullImagePopupSelector);
 export const popupImage = document.querySelector(".popup__picture");
 export const popupName = document.querySelector(".popup__image-caption");
 
-// export const popups = document.querySelectorAll('.popup');
+export const popupUpdateAvatarSelector = ".popup__update-avatar";
+export const popupUpdateAvatar = document.querySelector(popupUpdateAvatarSelector);
+export const formUpdateAvatar = popupUpdateAvatar.querySelector(".popup__form");
+export const buttonUpdateAvatar = document.querySelector(".profile__edit-avatar");
+
+export const popupConfirmSelector = ".popup__confirm";
+export const popupConfirm = document.querySelector(popupConfirmSelector);
+export const buttonConfirmDelete = document.querySelector(".popup__button_confirm");
+
+export const api = {
+    url: 'https://mesto.nomoreparties.co/v1/cohort-64',
+    headers: {
+        'Content-type': 'application/json',
+        authorization: 'e24a5663-2327-4061-8ac2-635e8dfeb3de'
+    }
+};
+
+// export const token = 'e24a5663-2327-4061-8ac2-635e8dfeb3de';
 
 export const validationOptions = {
     formSelector: '.popup__form',

@@ -9,6 +9,7 @@ class PopupWithForm extends Popup {
         this.nameInput = this._popup.querySelector('.popup__input_type_name');
         this.jobInput = this._popup.querySelector('.popup__input_type_profession');
         this.linkInput = this._popup.querySelector('.popup__input_type_link');
+        this._button = this._popup.querySelector('.popup__button');
     };
 
     _getInputValue() {
@@ -18,13 +19,6 @@ class PopupWithForm extends Popup {
         });
         console.log(this._formValues);
         return this._formValues;
-
-
-        // return {
-        //     name: this.nameInput.value,
-        //     job: this.jobInput?.value,
-        //     link: this.linkInput?.value,
-        // }
     };
 
     setInputValue(item) {
@@ -36,7 +30,6 @@ class PopupWithForm extends Popup {
 
     setEventListeners() {
         super.setEventListeners();
-        // this._form = this._popup.querySelector('.popup__form');
         this._form.addEventListener('submit', (evt) => {
             evt.preventDefault();
             this._submitCallback(this._getInputValue());
@@ -46,6 +39,14 @@ class PopupWithForm extends Popup {
     close() {
         super.close();
         this._form.reset();
+    };
+    
+    renderLoading(isLoading) {
+        if(isLoading) {
+            this._button.textContent = 'Сохранение...';
+        } else {
+            this._button.textContent = 'Сохранить';
+        }
     };
 }
 

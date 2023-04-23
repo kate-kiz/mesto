@@ -7,15 +7,17 @@ class Section {
 
     addItem(item) {
         this._container.prepend(item);
-        // console.log(item);
     };
 
+    setItems(items) {
+        this._items = items;
+    }
+
     render() {
-        // this._container.innerHTML = '';
         this._items.forEach(item => {
             this._container.append(this._renderer(item));
         });
-    }
+    };
 }
 
 export default Section; 

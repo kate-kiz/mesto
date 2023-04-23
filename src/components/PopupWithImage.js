@@ -8,9 +8,6 @@ class PopupWithImage extends Popup {
     };
 
     open({ name, link }) {
-        // popupImage.setAttribute("alt", name);
-        // popupImage.setAttribute("src", link);
-        // popupName.textContent = name;
         this._popupImageCaption.textContent = name;
         this._popupImage.alt = name;
         this._popupImage.src = link;

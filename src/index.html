@@ -16,7 +16,13 @@
 
     <main>
       <section class="profile">
-        <img src="<%=require('./images/image.jpg')%>" class="profile__avatar" alt="Жак-Ив Кусто">
+        <div class="profile__avatar">
+          <img src="" class="profile__image" alt="">
+          <button class="profile__edit-avatar" type="button">
+            <img class="profile__pen" src="<%=require('./images/pen.svg')%>" alt="Карандаш">
+
+          </button>
+        </div>
         <div class="profile__info">
           <div class="profile__container">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -88,13 +94,41 @@
     </div>
   </div>
 
+  <div class="popup popup__update-avatar">
+    <div class="popup__container">
+      <button class="popup__button-close" type="button"></button>
+      <h2 class="popup__header">Обновить аватар</h2>
+      <form class="popup__form" name="updateAvatar" id="popup__form_update-avatar" novalidate>
+        <div class="popup__section">
+          <input class="popup__input popup__input_type_link" type="url" name="link" id="link"
+            placeholder="Введите ссылку" value="" required>
+          <span class="popup__error" id="inputLink-error"></span>
+        </div>
+      </form>
+      <button class="popup__button" type="submit" form="popup__form_update-avatar">Сохранить</button>
+    </div>
+  </div>
+
+  <div class="popup popup__confirm">
+    <div class="popup__container popup__container_confirm">
+      <button class="popup__button-close" type="button"></button>
+      <form class="popup__form_confirm">
+        <h2 class="popup__header popup__header_confirm">Вы уверены?</h2>
+      </form>
+      <button class="popup__button popup__button_confirm" type="submit" form="popup__form_confirm">Да</button>
+    </div>
+  </div>
+
   <template id="element-template">
     <article class="element">
       <img src="<%=require('./images/nick-night-p9O_YJIZC7g-unsplash.jpg')%>" alt="Гейзерное озеро"
         class="element__picture">
       <div class="element__container">
         <h2 class="element__text">Гейзерное озеро</h2>
-        <button type="button" class="element__button-like"></button>
+        <div class="element__like-container">
+          <button type="button" class="element__button-like"></button>
+          <p class="element__like-count"></p>
+        </div>
       </div>
       <button type="button" class="element__button-delete"></button>
     </article>

@@ -69,7 +69,7 @@ class FormValidator {
     resetValidation() {
         this._formIsValid = this._inputs.every(inputElement => inputElement.validity.valid);
         this._toggleButtonState();
-        this._inputs.forEach(inputElement => {
+        this._inputs.forEach((inputElement) => {
             const errorElement = inputElement.closest(this._options.inputSectionSelector).querySelector(this._options.inputErrorSelector);
             this._hideError(inputElement, errorElement);
         });
