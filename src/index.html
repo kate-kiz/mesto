@@ -17,7 +17,7 @@
     <main>
       <section class="profile">
         <div class="profile__avatar">
-          <img src="" class="profile__image" alt="">
+          <img src="#" class="profile__image" alt="">
           <button class="profile__edit-avatar" type="button">
             <img class="profile__pen" src="<%=require('./images/pen.svg')%>" alt="Карандаш">
 
@@ -100,9 +100,9 @@
       <h2 class="popup__header">Обновить аватар</h2>
       <form class="popup__form" name="updateAvatar" id="popup__form_update-avatar" novalidate>
         <div class="popup__section">
-          <input class="popup__input popup__input_type_link" type="url" name="link" id="link"
+          <input class="popup__input popup__input_type_link" type="url" name="link" id="link-avatar"
             placeholder="Введите ссылку" value="" required>
-          <span class="popup__error" id="inputLink-error"></span>
+          <span class="popup__error" id="inputLink-error-avatar"></span>
         </div>
       </form>
       <button class="popup__button" type="submit" form="popup__form_update-avatar">Сохранить</button>
