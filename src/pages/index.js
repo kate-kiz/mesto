@@ -8,7 +8,6 @@ import Section from '../components/Section.js';
 import PopupWithConfirmation from '../components/PopupWithConfirmation';
 import Api from '../components/Api';
 import {
-    initialCards,
     containerSelector,
     popupFormElement,
     editButton,
@@ -23,7 +22,6 @@ import {
     formUpdateAvatar,
     buttonUpdateAvatar,
     popupConfirmSelector,
-    buttonConfirmDelete,
     api
 } from '../utils/constants.js';
 // import { concat } from 'core-js/core/array';
@@ -79,7 +77,7 @@ const popupAddPlace = new PopupWithForm({
         popupAddPlace.renderLoading(true);
         configApi.addCard(item)
             .then((item) => {
-                cardsSection.addItem(mainListCardRenderer(item));
+                cardsSection.addItem(renderInitialCards(item));
                 popupAddPlace.close();
             })
             .catch((error) => {
@@ -95,7 +93,7 @@ popupAddPlace.setEventListeners();
 const imagePopup = new PopupWithImage(fullImagePopupSelector);
 imagePopup.setEventListeners();
 
-const mainListCardRenderer = (item) => {
+const renderInitialCards = (item) => {
     const card = new Card({
         items: item,
         userID: userInfo.getUserID(),
@@ -146,8 +144,7 @@ const profileFormValidator = new FormValidator(validationOptions, popupFormEleme
 const addPlaceFormValidator = new FormValidator(validationOptions, formAddCard);
 const avatarFormValidator = new FormValidator(validationOptions, formUpdateAvatar);
 
-const cardsSection = new Section({ items: [], renderer: mainListCardRenderer }, containerSelector);
-// cardsSection.render();
+const cardsSection = new Section({ items: [], renderer: renderInitialCards }, containerSelector);
 
 Promise.all([configApi.getUserInfo(), configApi.getInitialCards()])
     .then(([userInformation, cards]) => {
@@ -161,21 +158,6 @@ Promise.all([configApi.getUserInfo(), configApi.getInitialCards()])
     .catch((error) => {
         console.log(error);
     });
-
-// const handleEditButtonClick = () => {
-//     popupEdit.setInputValue(userInfo.getUserInfo());
-//     profileFormValidator.resetValidation();
-//     popupEdit.open();
-// }
-
-// const handleAddPlaceButtonClick = () => {
-//     addPlaceFormValidator.resetValidation();
-//     popupAddPlace.open();
-// };
-
-// const handleUpdateAvatarButtonClick = () => {
-//     popupEditAvatar.open();
-// }
 
 editButton.addEventListener("click", () => {
     popupEdit.setInputValue(userInfo.getUserInfo());
@@ -198,5 +180,3 @@ buttonUpdateAvatar.addEventListener("click", () => {
 });
 
 avatarFormValidator.enableValidation();
-
-// buttonUpdateAvatar.addEventListener("click", handleUpdateAvatarButtonClick);

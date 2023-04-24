@@ -19,10 +19,6 @@ class Card {
         this._likesCounter = this._view.querySelector(".element__like-count");
     };
 
-    // _isLiked() {
-    //     return this._likes.some(item => item._id === this._userID);
-    // };
-
     getCardId() {
         return this._cardID;
     }
@@ -32,12 +28,6 @@ class Card {
     }
 
     _showLikes() {
-        // if(this._likes.length) {
-        //     this._likesCounter.textContent = this._likes.length;
-        // } else {
-        //     this._likesCounter.textContent = '';
-        // }
-
         this._likes.forEach(like => {
             if (like._id === this._userID) {
                 this.likeCard();
@@ -47,7 +37,6 @@ class Card {
 
     likeCard() {
         this._buttonLikeCard.classList.add("element__button-like_type_active");
-        // this._likes.append(this._userID);
     };
 
     dislikeCard() {
@@ -103,4 +92,3 @@ class Card {
 }
 
 export default Card;
-

@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
+  <meta name="viewport" type="text/css" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <title>Mesto</title>
 </head>
 
@@ -112,7 +112,7 @@
   <div class="popup popup_confirm">
     <div class="popup__container popup__container_confirm">
       <button class="popup__button-close" type="button"></button>
-      <form class="popup__form">
+      <form class="popup__form" name="confirmDeletion">
         <h2 class="popup__header popup__header_confirm">Вы уверены?</h2>
       </form>
       <button class="popup__button popup__button_confirm" type="submit" form="popup__form_confirm">Да</button>
@@ -121,8 +121,7 @@
 
   <template id="element-template">
     <article class="element">
-      <img src="<%=require('./images/nick-night-p9O_YJIZC7g-unsplash.jpg')%>" alt="Гейзерное озеро"
-        class="element__picture">
+      <img src="#" alt="" class="element__picture">
       <div class="element__container">
         <h2 class="element__text">Гейзерное озеро</h2>
         <div class="element__like-container">
