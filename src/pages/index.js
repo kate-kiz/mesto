@@ -150,7 +150,7 @@ Promise.all([configApi.getUserInfo(), configApi.getInitialCards()])
     .then(([userInformation, cards]) => {
         const { name, about, avatar, _id } = userInformation;
 
-        userInfo.setUserInfo({ name: name, about, userID: _id });
+        userInfo.setUserInfo({ name: name, about, _id });
         userInfo.setUserAvatar(avatar);
         cardsSection.setItems(cards);
         cardsSection.render();
