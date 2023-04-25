@@ -17,11 +17,11 @@ class UserInfo {
         return this._userID;
     }
 
-    setUserInfo({ name, about, userID }) {
+    setUserInfo({ name, about, _id }) {
         this._nameElement.textContent = name;
         this._avatarElement.alt = name;
         this._jobElement.textContent = about;
-        this._userID = userID;
+        this._userID = _id;
     };
 
     setUserAvatar(avatar) {

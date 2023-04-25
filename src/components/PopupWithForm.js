@@ -41,7 +41,7 @@ class PopupWithForm extends Popup {
         if (isLoading) {
             this._button.textContent = loadingText;
         } else {
-            this._button.textContent = this._buttonText.textContent;
+            this._button.textContent = this._buttonText;
         }
     };
 }

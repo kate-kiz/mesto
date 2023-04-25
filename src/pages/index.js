@@ -37,7 +37,6 @@ const popupEditAvatar = new PopupWithForm({
         popupEditAvatar.renderLoading(true);
         configApi.setUserAvatar({ avatar: item.link })
             .then((item) => {
-                userInfo.setUserInfo(item);
                 userInfo.setUserAvatar(item.avatar);
                 popupEditAvatar.close();
             })
@@ -77,7 +76,8 @@ const popupAddPlace = new PopupWithForm({
         popupAddPlace.renderLoading(true);
         configApi.addCard(item)
             .then((item) => {
-                cardsSection.addItem(renderInitialCards(item));
+                cardsSection.addItem(createCard(item));
+                console.log(item);
                 popupAddPlace.close();
             })
             .catch((error) => {
@@ -93,7 +93,7 @@ popupAddPlace.setEventListeners();
 const imagePopup = new PopupWithImage(fullImagePopupSelector);
 imagePopup.setEventListeners();
 
-const renderInitialCards = (item) => {
+const createCard = (item) => {
     const card = new Card({
         items: item,
         userID: userInfo.getUserID(),
@@ -144,7 +144,7 @@ const profileFormValidator = new FormValidator(validationOptions, popupFormEleme
 const addPlaceFormValidator = new FormValidator(validationOptions, formAddCard);
 const avatarFormValidator = new FormValidator(validationOptions, formUpdateAvatar);
 
-const cardsSection = new Section({ items: [], renderer: renderInitialCards }, containerSelector);
+const cardsSection = new Section({ items: [], renderer: createCard }, containerSelector);
 
 Promise.all([configApi.getUserInfo(), configApi.getInitialCards()])
     .then(([userInformation, cards]) => {
